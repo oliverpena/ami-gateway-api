@@ -11,3 +11,19 @@ repos:
     rev: 5.10.1
     hooks:
       - id: isort
+  - repo: local
+    hooks:
+      - id: unittest
+        name: unittest
+        entry: pipenv run python ./tests/unit_tests_runner.py
+        language: system
+        types: [python]
+        pass_filenames: false
+        stages: [commit]
+      - id: integrationtest
+        name: integration_test
+        entry: pipenv run python ./tests/integration_tests_runner.py
+        language: system
+        types: [python]
+        pass_filenames: false
+        stages: [commit]

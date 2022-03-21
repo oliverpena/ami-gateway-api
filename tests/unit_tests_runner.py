@@ -4,7 +4,7 @@ import unittest
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().discover(
-        start_dir='test/unit_tests', pattern='*test.py')
+        start_dir='tests/unit_tests', pattern='*test.py')
     resutl = unittest.TextTestRunner(verbosity=2).run(suite)
     if resutl.wasSuccessful():
         try:
